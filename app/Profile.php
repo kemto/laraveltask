@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+
 class Profile extends Model
 {
     //
@@ -14,6 +15,11 @@ class Profile extends Model
         'gender' => 'required',
         'hobby' => 'required',
         'introduction' => 'required'
-        );
+    );
+    
+    public function historicalprofiles()
+    {
+        return $this->hasMany('app\Historicalprofile');
+    }
     
 }
